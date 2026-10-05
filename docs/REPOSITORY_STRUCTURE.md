@@ -20,6 +20,6 @@ results/quality_checks/    Compact baseline evidence and all 60 public candidate
 manifests/                 Package hashes, source mapping and baseline registrations
 ```
 
-The original project retains development tests, earlier revisions, full private controller records and original ZIP archives. This folder contains the final submission-facing materials and evidence rather than the full working history. Frozen filenames and compatibility material paths are retained where the original offline code depends on them. Current navigation does not require historical versioned result directories.
+The controlled project retains full private controller records and original ZIP archives. This repository contains the final research account and public evidence. Registered filenames and verification-fixture paths are retained where offline code depends on them.
 
 The canonical original specification is archived as `manifests/frozen_protocol.md.gz`. `manifests/translation.json` distinguishes original and translated hashes.

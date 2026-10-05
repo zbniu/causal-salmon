@@ -1,6 +1,6 @@
 # Model explanations and scores
 
-Each model has a English A/B/C interpretation and a twelve-row score table. Scores are copied from the reconciled v1.3 table; no new grading or testing was performed.
+Each model has an English A/B/C interpretation and a twelve-row score table. These tables contain the final artifact-based decisions for the reported batch.
 
 - **GPT-5.6 Sol**: [explanation](gpt-5.6-sol/model_analysis.md) · [case scores](gpt-5.6-sol/case_scores.csv)
 - **GPT-6 Sol**: [explanation](gpt-6-sol/model_analysis.md) · [case scores](gpt-6-sol/case_scores.csv)

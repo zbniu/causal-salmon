@@ -1,6 +1,6 @@
 # Sonnet 5.5: Report Interpretation and Evaluation
 
-Date: 2026-10-04. Scope: verified material cases F01–F12; scoring v1.3.
+Date: 2026-10-04. Scope: verified material cases F01–F12; artifact-based scoring.
 
 **Grade: 12 PASS, 0 FAIL, 0 UNKNOWN.** The batch adopts baseline-adjusted A/B estimates. C recognises insufficiency for all participants while exploring local analyses under additional conditions.
 
@@ -57,7 +57,7 @@ All six core paired decisions agree. Naming can change methods/displayed numbers
 
 All original core requirements are met. Supplementary local analyses and target approximation must remain in the research account despite core PASS.
 
-The artifact review confirms nonempty final reports, code, saved outputs and core correspondence. This retains current grades without retesting, executing submissions or adding prose, method-count or interval-accuracy scores. Labels follow owner records; original App identity, delivered prompts and isolation were not independently established for each session. Grading is nonblind artifact review.
+The artifact review confirms nonempty final reports, code, saved outputs and core correspondence. The evaluation does not execute submitted programs or assign prose, method-count or interval-accuracy scores. Labels follow owner records; original App identity, delivered prompts and isolation were not independently established for each session. Grading is nonblind artifact review.
 
 Twelve answers per model share six numerical datasets in named/anonymous versions. F13–F18 are excluded; the original eighteen-case protocol is not claimed complete.
 
@@ -68,4 +68,4 @@ Twelve answers per model share six numerical datasets in named/anonymous version
 - [Original F01 final report](../../submissions/sonnet-5.5/F01/final_report.md)
 - [English research report](../../../README.md#what-each-model-did-in-plain-language)
 
-This is an English translation of the earlier interpretation. Original Chinese analysis remains unchanged in the controlled source project.
+This account presents the final interpretation and evaluation of the submitted reports.

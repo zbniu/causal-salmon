@@ -39,7 +39,7 @@
   "prompt": "materials/app_prompt.txt",
   "prompt_sha256": "57dc7495594663e453682ca92cb74dc6366dff13aee411e21be7b8e3b53af118",
   "rubric": "docs/scoring.md",
-  "rubric_sha256": "b8b7492162ad87b3b7cdde565ac81c883e66f6d4375ef5f0f1e514c89ad0436c",
+  "rubric_sha256": "5bf802b052ea0be25dac28e727ccf0ab1ba6703dbba854c62963e91d895296a4",
   "grades": {
     "PASS": 68,
     "FAIL": 4,

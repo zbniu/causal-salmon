@@ -8,7 +8,7 @@ Study rules, numerical thresholds and the parameter-selection procedure are fixe
 
 The main text covers the question, variables, true effect, three assignment worlds, parameters, calibration, materials, scoring, isolation, test matrix and implementation sequence. Appendices provide the mathematical random specification, six English study descriptions, the anonymisation table, neutral prompt, report extraction and grading examples.
 
-**Translation and scope note.** This is an English translation of the frozen numerical and original study baseline. The original bytes are retained in `manifests/frozen_protocol.md.gz`; their original SHA-256 remains the identity in historical registrations. Current App execution, prompt v7, artifact-based scoring v1.3 and the final F01–F12 scope are specified in [reporting_scope.md](docs/reporting_scope.md). The later [data generation protocol](docs/DATA_GENERATION_PROTOCOL.md) governs the screened pool and its seeds. Translation does not revive superseded baseline execution or scoring requirements.
+**Translation and scope note.** This is an English translation of the frozen numerical and original study baseline. The original bytes are retained in `manifests/frozen_protocol.md.gz`; their original SHA-256 remains the identity in historical registrations. App execution, the experiment prompt, artifact-based scoring and the final F01–F12 scope are specified in [reporting_scope.md](docs/reporting_scope.md). The later [data generation protocol](docs/DATA_GENERATION_PROTOCOL.md) governs the screened pool and its seeds. Translation does not revive superseded baseline execution or scoring requirements.
 
 ## 1. Study overview
 
@@ -385,7 +385,7 @@ The baseline requires a final-answer report beginning with exactly one standalon
 
 ## 8. Baseline scoring contract
 
-Appendix E gives examples. This section translates the original contract; current artifact-based v1.3 scoring is specified separately.
+Appendix E gives examples. This section translates the original contract; artifact-based scoring for the reported batch is specified separately.
 
 ### 8.1 Scoring procedure
 

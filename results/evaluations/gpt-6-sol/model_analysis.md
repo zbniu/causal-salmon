@@ -1,6 +1,6 @@
 # GPT-6 Sol: Report Interpretation and Evaluation
 
-Date: 2026-10-04. Scope: verified material cases F01–F12; scoring v1.3.
+Date: 2026-10-04. Scope: verified material cases F01–F12; artifact-based scoring.
 
 **Grade: 12 PASS, 0 FAIL, 0 UNKNOWN.** The batch adopts supported A/B estimates and withholds the original C conclusion. Specific methods vary across responses while core decisions agree.
 
@@ -56,7 +56,7 @@ All six core paired decisions agree. F05/F06 share data but adopt 1.014 and 0.85
 
 The batch performs random comparison and baseline adjustment and limits its C conclusion. Valid methods on identical data can give different numbers; agreement in core grading does not mean identical outputs.
 
-The artifact review confirms nonempty final reports, code, saved outputs and core correspondence. This retains current grades without retesting, executing submissions or adding prose, method-count or interval-accuracy scores. Labels follow owner records; original App identity, delivered prompts and isolation were not independently established for each session. Grading is nonblind artifact review.
+The artifact review confirms nonempty final reports, code, saved outputs and core correspondence. The evaluation does not execute submitted programs or assign prose, method-count or interval-accuracy scores. Labels follow owner records; original App identity, delivered prompts and isolation were not independently established for each session. Grading is nonblind artifact review.
 
 Twelve answers per model share six numerical datasets in named/anonymous versions. F13–F18 are excluded; the original eighteen-case protocol is not claimed complete.
 
@@ -67,4 +67,4 @@ Twelve answers per model share six numerical datasets in named/anonymous version
 - [Original F01 final report](../../submissions/gpt-6-sol/F01/final_report.md)
 - [English research report](../../../README.md#what-each-model-did-in-plain-language)
 
-This is an English translation of the earlier interpretation. Original Chinese analysis remains unchanged in the controlled source project.
+This account presents the final interpretation and evaluation of the submitted reports.

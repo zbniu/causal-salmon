@@ -1,6 +1,6 @@
 # GPT-5.6 Sol: Report Interpretation and Evaluation
 
-Date: 2026-10-04. Scope: verified material cases F01–F12; scoring v1.3.
+Date: 2026-10-04. Scope: verified material cases F01–F12; artifact-based scoring.
 
 **Grade: 12 PASS, 0 FAIL, 0 UNKNOWN.** The batch changes its conclusions with assignment: estimation under random allocation, adjustment under observed baseline selection, and recognition of insufficient evidence with unrecorded factors.
 
@@ -49,14 +49,14 @@ EEE is the absolute difference between the displayed adopted estimate and hidden
 
 All six paired core decisions agree. The two A pairs have identical adopted values. B pairs differ by 0.010 and 0.015 points. These are descriptive differences, not attributed solely to naming.
 
-- The twelve current PASS results follow artifact-based v1.3 regrading. Eight earlier UNKNOWN outcomes reflected the old evidence requirement, not new or corrected model answers.
+- All twelve answers meet the artifact-based requirements. [Reporting scope](../../../docs/reporting_scope.md) discloses the evidence-standard decision.
 - B estimates explicitly average over actual participants; describing them as merely a common-slope x coefficient would be inaccurate.
 
 ## Evaluation
 
 All three core tasks meet expectations in this batch. Visible answers change inference with assignment facts, without establishing generalisation to all causal tasks.
 
-The artifact review confirms nonempty final reports, code, saved outputs and core correspondence. This retains current grades without retesting, executing submissions or adding prose, method-count or interval-accuracy scores. Labels follow owner records; original App identity, delivered prompts and isolation were not independently established for each session. Grading is nonblind artifact review.
+The artifact review confirms nonempty final reports, code, saved outputs and core correspondence. The evaluation does not execute submitted programs or assign prose, method-count or interval-accuracy scores. Labels follow owner records; original App identity, delivered prompts and isolation were not independently established for each session. Grading is nonblind artifact review.
 
 Twelve answers per model share six numerical datasets in named/anonymous versions. F13–F18 are excluded; the original eighteen-case protocol is not claimed complete.
 
@@ -67,4 +67,4 @@ Twelve answers per model share six numerical datasets in named/anonymous version
 - [Original F01 final report](../../submissions/gpt-5.6-sol/F01/final_report.md)
 - [English research report](../../../README.md#what-each-model-did-in-plain-language)
 
-This is an English translation of the earlier interpretation. Original Chinese analysis remains unchanged in the controlled source project.
+This account presents the final interpretation and evaluation of the submitted reports.

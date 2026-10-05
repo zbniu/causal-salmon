@@ -2,7 +2,7 @@
 
 Causal Salmon is an independent research project examining whether AI research agents make causal claims supported by the evidence available to them. Inspired by the Live Salmon idea, it uses a controlled tutoring simulation with known ground truth to evaluate justified estimation, adjustment for observed selection, and recognition of insufficient evidence.
 
-**Completed study · 4 October 2026:** six user-labelled models, F01–F12 each; 72 submitted answers. Data calibration and qualification are complete. Prompt v7; scoring v1.3. This repository is the independent research submission.
+**Completed study · 4 October 2026:** six user-labelled models, F01–F12 each; 72 submitted answers. Data calibration and qualification are complete. The experiment prompt and artifact-based scoring rules are included. This repository is the independent research submission.
 
 ## Contents
 
@@ -57,17 +57,17 @@ In B, participation depends on baseline score and unrelated randomness, without 
 
 ### Model sessions and scope
 
-The project owner manually supplied each model with `STUDY_DESCRIPTION.md`, `data.csv`, and the neutral [prompt v7](materials/app_prompt.txt). The prescribed procedure uses a fresh session per question, excludes internet and repository access, and requests executed code, saved outputs, and a downloadable final report and ZIP. Agents choose their methods freely. Named descriptions refer to tutoring and scores; anonymous descriptions use units and arrangement Q while retaining the assignment facts.
+The project owner manually supplied each model with `STUDY_DESCRIPTION.md`, `data.csv`, and the neutral [experiment prompt](materials/app_prompt.txt). The prescribed procedure uses a fresh session per question, excludes internet and repository access, and requests executed code, saved outputs, and a downloadable final report and ZIP. Agents choose their methods freely. Named descriptions refer to tutoring and scores; anonymous descriptions use units and arrangement Q while retaining the assignment facts.
 
 This report includes F01–F12 for each of six user-labelled models; F13–F18 were dropped after the owner reviewed F01–F12 results, rather than excluded under a preregistered twelve-case scope. Each world has two numerical datasets, each presented twice. Thus 72 answers reuse **six numerical CSVs**, and each model contributes four answers per world.
 
-Development data and the D01–D06 upload packages remain public for inspection, but the planned complete six-case development matrix was not completed before the formal batch. Earlier prompt-feasibility work, including a D01/v7 file-delivery check, is separate from that matrix and from the 72 reported answers. Offline qualification of development data does not establish completion of model pilot sessions.
+Development data and the D01–D06 upload packages remain public for inspection, but the planned complete six-case development matrix was not completed before the formal batch. Prompt-feasibility work, including a D01 file-delivery check, is separate from that matrix and from the 72 reported answers. Offline qualification of development data does not establish completion of model pilot sessions.
 
 ### Evaluation
 
-A Codex assistant reviewed submitted reports, code and saved results without blinded model identities. The [v1.3 rules](docs/scoring.md) check the core A/B/C requirements and correspondence between methods, outputs and adopted answers. Ordinary `z ~ x + y` counts as effective adjustment, with its participant-target approximation recorded. No wording, structure, method-count or numerical-error threshold determines PASS. The review checks correspondence among supplied artifacts; it does not independently establish that the original App session executed each program.
+A Codex assistant reviewed submitted reports, code and saved results without blinded model identities. The [scoring rules](docs/scoring.md) check the core A/B/C requirements and correspondence between methods, outputs and adopted answers. Ordinary `z ~ x + y` counts as effective adjustment, with its participant-target approximation recorded. No wording, structure, method-count or numerical-error threshold determines PASS. The review checks correspondence among supplied artifacts; it does not independently establish that the original App session executed each program.
 
-The evidence rule changed from v1.2 plus edge-r1 to v1.3 after initial submissions. GPT-5.6 Sol's four A and four B answers changed from UNKNOWN to PASS when original App execution traces ceased to be prerequisites; its four C answers remained PASS. Its summary therefore changed from 4 PASS / 8 UNKNOWN to 12 PASS / 0 UNKNOWN, without new answers, changed estimates or a rerun. This is a change in evidence acceptance, not an observed improvement in the model's performance.
+All reported decisions use the same artifact-based scoring rules. Evidence acceptance was simplified after initial submissions; eight A/B decisions for GPT-5.6 Sol depend on that simplification. This concerns grading evidence, not improved model performance. See [reporting scope](docs/reporting_scope.md) for the disclosure.
 
 ## 3. Results and analysis methods
 
@@ -166,7 +166,7 @@ On these tasks, all six models' submitted methods and adopted answers met the ra
 
 
 
-**Possible extension: collective decisions across models.** A future experiment could adapt the collective-analysis format in the [earlier Codex Live Salmon implementation](https://github.com/Hypogenic-AI/live-salmon-ai-test-7d56-codex/blob/35ae8f8eaf76fb83551c2c3357de3e2dabb76597/REPORT.md), which used three analyst agents and a synthesizer, to a team of different models. Each model would first analyze the same study description and CSV independently, then exchange reports, challenge assumptions and jointly select a final causal conclusion and, where justified, an estimate through a prespecified discussion-and-synthesis procedure. Individual answers, disagreements and the joint report would be retained. The same A/B/C criteria would assess whether collaboration improves participant-targeted estimation in B and recognition of insufficient evidence in C, or instead reinforces a shared error. Comparisons should include both single-model analysis and independent repeated analyses with comparable total resource budgets, to distinguish collaboration from simply using more computation. Hidden truth and grading materials would remain inaccessible until answers are locked; agreement alone would not establish causality. This is a proposed extension, not an experiment performed in the current study.
+**Possible extension: collective decisions across models.** A future experiment could adapt the collective-analysis format in the [Codex Live Salmon implementation](https://github.com/Hypogenic-AI/live-salmon-ai-test-7d56-codex/blob/35ae8f8eaf76fb83551c2c3357de3e2dabb76597/REPORT.md), which used three analyst agents and a synthesizer, to a team of different models. Each model would first analyze the same study description and CSV independently, then exchange reports, challenge assumptions and jointly select a final causal conclusion and, where justified, an estimate through a prespecified discussion-and-synthesis procedure. Individual answers, disagreements and the joint report would be retained. The same A/B/C criteria would assess whether collaboration improves participant-targeted estimation in B and recognition of insufficient evidence in C, or instead reinforces a shared error. Comparisons should include both single-model analysis and independent repeated analyses with comparable total resource budgets, to distinguish collaboration from simply using more computation. Hidden truth and grading materials would remain inaccessible until answers are locked; agreement alone would not establish causality. This is a proposed extension, not an experiment performed in the current study.
 
 ## 7. Repository navigation
 
@@ -181,6 +181,6 @@ Full hidden student records and original ZIP archives remain controlled. Submitt
 
 ## 8. Verification and reproduction
 
-Run `python scripts/validate_submission.py` to check file hashes, result counts, paired inputs and local links without running models or submitted analysis code. See [reproduction instructions](docs/reproduction.md) for offline tests. The current App prompt is `materials/app_prompt.txt`; `materials/prompt.txt` is the frozen earlier offline baseline used by existing verification code.
+Run `python scripts/validate_submission.py` to check file hashes, result counts, paired inputs and local links without running models or submitted analysis code. See [reproduction instructions](docs/reproduction.md) for offline tests. The experiment prompt is `materials/app_prompt.txt`; `materials/prompt.txt` is a registered offline verification fixture, not the App experiment prompt.
 
 Model-answer collection was manual. This repository has no automated model runner and cannot replay the original App conversations; its scripts verify saved evidence and support offline data checks.

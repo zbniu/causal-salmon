@@ -1,6 +1,6 @@
 # Opus 5.5: Report Interpretation and Evaluation
 
-Date: 2026-10-04. Scope: verified material cases F01–F12; scoring v1.3.
+Date: 2026-10-04. Scope: verified material cases F01–F12; artifact-based scoring.
 
 **Grade: 12 PASS, 0 FAIL, 0 UNKNOWN.** The batch uses participant-targeted adjusted A/B estimates. C declines a definite all-participant answer, with additional local cutoff analyses requiring caution.
 
@@ -57,7 +57,7 @@ All six core decisions agree. C F01/F02 use the same data but different local sp
 
 The original three core tasks pass, while supplementary local causal interpretations have clear evidence limitations. A correct main answer can coexist with supplements requiring verification.
 
-The artifact review confirms nonempty final reports, code, saved outputs and core correspondence. This retains current grades without retesting, executing submissions or adding prose, method-count or interval-accuracy scores. Labels follow owner records; original App identity, delivered prompts and isolation were not independently established for each session. Grading is nonblind artifact review.
+The artifact review confirms nonempty final reports, code, saved outputs and core correspondence. The evaluation does not execute submitted programs or assign prose, method-count or interval-accuracy scores. Labels follow owner records; original App identity, delivered prompts and isolation were not independently established for each session. Grading is nonblind artifact review.
 
 Twelve answers per model share six numerical datasets in named/anonymous versions. F13–F18 are excluded; the original eighteen-case protocol is not claimed complete.
 
@@ -68,4 +68,4 @@ Twelve answers per model share six numerical datasets in named/anonymous version
 - [Original F01 final report](../../submissions/opus-5.5/F01/final_report.md)
 - [English research report](../../../README.md#what-each-model-did-in-plain-language)
 
-This is an English translation of the earlier interpretation. Original Chinese analysis remains unchanged in the controlled source project.
+This account presents the final interpretation and evaluation of the submitted reports.

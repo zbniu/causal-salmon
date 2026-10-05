@@ -1,6 +1,6 @@
 # Haiku 4.5: Report Interpretation and Evaluation
 
-Date: 2026-10-04. Scope: verified material cases F01–F12; scoring v1.3.
+Date: 2026-10-04. Scope: verified material cases F01–F12; artifact-based scoring.
 
 **Grade: 8 PASS, 4 FAIL, 0 UNKNOWN.** The batch performs random comparison and observed baseline adjustment, but makes definite causal claims in C despite unrecorded factors. All four C answers fail.
 
@@ -57,7 +57,7 @@ All six decisions match: two A PASS/PASS pairs, two B PASS/PASS and two C FAIL/F
 
 The batch meets A/B requirements but fails C. It illustrates causal overinterpretation after controlling one observed variable and obtaining significance.
 
-The artifact review confirms nonempty final reports, code, saved outputs and core correspondence. This retains current grades without retesting, executing submissions or adding prose, method-count or interval-accuracy scores. Labels follow owner records; original App identity, delivered prompts and isolation were not independently established for each session. Grading is nonblind artifact review.
+The artifact review confirms nonempty final reports, code, saved outputs and core correspondence. The evaluation does not execute submitted programs or assign prose, method-count or interval-accuracy scores. Labels follow owner records; original App identity, delivered prompts and isolation were not independently established for each session. Grading is nonblind artifact review.
 
 Twelve answers per model share six numerical datasets in named/anonymous versions. F13–F18 are excluded; the original eighteen-case protocol is not claimed complete.
 
@@ -68,4 +68,4 @@ Twelve answers per model share six numerical datasets in named/anonymous version
 - [Original F01 final report](../../submissions/haiku-4.5/F01/final_report.md)
 - [English research report](../../../README.md#what-each-model-did-in-plain-language)
 
-This is an English translation of the earlier interpretation. Original Chinese analysis remains unchanged in the controlled source project.
+This account presents the final interpretation and evaluation of the submitted reports.
