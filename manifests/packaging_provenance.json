@@ -7147,7 +7147,7 @@
     "docs/DATA_GENERATION_PROTOCOL.md": "6b4442aeb3f4561e8254b712b8e17ca77f8605b34c85699b8dfc248ebe916e7b",
     "docs/VERIFICATION_CONTRACT.md": "7e211a093ed02d6a849a3ceb14145ca9979b99badb93df620f5d4dd5feab4e14",
     "docs/FINAL_DATA_GENERATION_PLAN.md": "21ee244b3bc7fc9364572471af2c8bc81cd6f4306da4a0d23b3b1b1583d566b4",
-    "docs/IMPLEMENTATION_CONTRIBUTIONS.md": "5f4d15aec70d1bc4918a30f8d75f9c45948c81506c5e6278fab58be0823e983b",
+    "docs/IMPLEMENTATION_CONTRIBUTIONS.md": "5aaa83244fa5d80e83d44b2b789a6bd14faace93b5e65acb83a0f2d6fe2a7311",
     "materials/prompt.txt": "91da46e03dbe5379b3ba0990009120781686ef4365d93df454cb0c99e56170d4",
     "materials/substitutions.json": "b2493881a66de12e21eaaa4166160969fef2290fffe89f8f3642b74ff0295423",
     "materials/app_prompt.txt": "57dc7495594663e453682ca92cb74dc6366dff13aee411e21be7b8e3b53af118",
@@ -8202,7 +8202,7 @@
     "docs/scoring.md": "b8b7492162ad87b3b7cdde565ac81c883e66f6d4375ef5f0f1e514c89ad0436c",
     "materials/scoring_prompt.md": "067db7f751f90fff5f73083bae026a0ce7771e2ad28b6b72257404b9c0944dfe",
     "docs/scope_decision.md": "7f587b39817ee306e6618e3d5d438c2b938429fb8fe48d3583d6ea4cb5e13d79",
-    "docs/contributions.md": "fd3ce06fe5fbf8fa6c78187726c36e6d140e7f96191a218448accde4bc530ba3",
+    "docs/contributions.md": "3cfec888c4fded1a7a185b07338bb24b89bf9955d6cae7f9e05cbf8c2f5ab2bc",
     "results/tables/model_summary.csv": "f1ddbab21c58a51c1c2700c46192d3a056aae93a91c5cc80fa0e75085f1ead50",
     "results/tables/methods_and_results.csv": "114f62cec8296783186dc7d94a51421a61eff701321bd10bad170f3c4b5e97e1",
     "results/tables/case_results.csv": "5324bad156f1a046053378902ab6c124e195bcbaad6e3775f47b89b2644c3446",
@@ -8263,12 +8263,13 @@
     "materials/uploads/F17/data.csv": "186ca4a045e498c2d4b405f7bfddc4667c44e90e6a2d8399a9b74298ec964581",
     "materials/uploads/F18/STUDY_DESCRIPTION.md": "2988f677ba0ac4f96443727ca7147948d695b829fa856966f399302406df16cc",
     "materials/uploads/F18/data.csv": "186ca4a045e498c2d4b405f7bfddc4667c44e90e6a2d8399a9b74298ec964581",
-    "README.md": "804c4c5135e500fc97443c67b17533c4e1c94f37902935f641abf35c259eeea0"
+    "README.md": "703bbfa028999d4d2d6344b11d7acfd6783b508389f4d44fc14f6ae47a7f405e"
   },
   "report_prose_preservation_verified": false,
   "English_translation_manifest": "manifests/translation.json",
   "source_files_verified_unchanged_at_initial_packaging": 1175,
   "source_files_currently_unchanged": 1178,
   "path_redaction_manifest": "manifests/path_redaction.json",
-  "public_research_document": "README.md"
+  "public_research_document": "README.md",
+  "review_followup_note": "Clarified evidence status, scope timing, incomplete development matrix, assignment formulas, grading-provider limitation, prompt permission and publication. Added a dataset-wise numerical-error view; source numerical fields and original model artifacts unchanged."
 }

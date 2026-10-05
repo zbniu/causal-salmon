@@ -8,7 +8,8 @@ Scope: six models × F01–F12 = 72 answers, 68 PASS, 4 FAIL, 0 UNKNOWN. A and B
 | [methods_and_results.csv](methods_and_results.csv) | Adopted method descriptions and estimate ranges, not confidence intervals |
 | [case_results.csv](case_results.csv) | All 72 grades, report quotations, adopted values, optional EEE and evidence paths |
 | [semantic_pairs.csv](semantic_pairs.csv) | All 36 named/anonymous pairs |
-| [numeric_error.csv](numeric_error.csv) | Optional EEE summary by model/world |
+| [numeric_error_by_dataset.csv](numeric_error_by_dataset.csv) | Primary numerical-error view: 36 model/dataset combinations, with separate named/anonymous values and EEE |
+| [numeric_error.csv](numeric_error.csv) | Supplementary descriptive means by model/world; not estimator rankings |
 
 [Per-model explanations](../evaluations/README.md), [submitted evidence](../submissions/README.md) and [report](../../README.md#3-results-and-analysis-methods) supply interpretation and original files. The [original source registration](../../manifests/original_table_provenance.json) is preserved as historical provenance; current copied paths and hashes are in [the packaging provenance](../../manifests/packaging_provenance.json).
 

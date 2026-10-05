@@ -32,7 +32,7 @@
   },
   "public_package_check": {
     "public_package_verified": true,
-    "public_files": 1284,
+    "public_files": 1285,
     "original_artifacts": 915,
     "answers": 72,
     "grades": {
@@ -45,7 +45,7 @@
     "selected_datasets": 12,
     "pool_candidates": 60,
     "rejected_candidates": 4,
-    "local_links_checked": 1250,
+    "local_links_checked": 1255,
     "public_text_is_English": true,
     "tested_models_or_submitted_code_executed": false
   },
@@ -57,5 +57,15 @@
   "historical_frozen_generation_gates_unchanged": true,
   "changes_note": "Final report presentation, concise scope/evidence disclosure, local path cleanup, navigation and report synchronization only; numerical inputs, grades and original model artifacts unchanged.",
   "public_research_document": "README.md",
-  "research_report_body_retained_in_README": true
+  "research_report_body_retained_in_README": true,
+  "documentation_review_followup": {
+    "single_README_retained": true,
+    "license_added": false,
+    "scope_and_regrading_disclosed": true,
+    "development_matrix_not_completed_disclosed": true,
+    "numeric_error_dataset_rows": 36,
+    "original_score_tables_unchanged": true,
+    "original_model_artifacts_unchanged": 915,
+    "new_model_calls": 0
+  }
 }

@@ -6,4 +6,6 @@
 4. Download `final_report.md` and `submission.zip`; preserve original files under the model and verified material case. Accept report, code and saved outputs; retain errors and available logs. A cloud session cannot directly save to a local computer path; download and classify its attachments locally.
 5. Apply the [core scoring rules](scoring.md) from submitted artifacts. Missing original App tool logs are not by themselves scientific failure. Delivery requirements and scientific correctness are recorded separately.
 
+D01–D06 are retained development materials, not a completed six-case pilot matrix. Earlier feasibility checks do not substitute for that full matrix and are excluded from formal results.
+
 The reported batch is complete: F01–F12 for each of six models. F13–F18 are retained as unused original materials and have been abandoned, not scheduled for further runs. This guide documents the procedure and does not authorize new experiments. A model's assertion of isolation is not proof that previous context was absent.

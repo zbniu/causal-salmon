@@ -20,11 +20,11 @@ Causal Salmon is an independent research project examining whether AI research a
 
 Causal Salmon examines whether AI research agents make causal claims justified by the evidence they receive. A simulated tutoring study creates three tasks: estimate an effect after random assignment (A), adjust for selection on observed baseline scores (B), and recognize insufficient evidence when relevant selection conditions are unrecorded (C). Identical numerical data are presented with named or anonymous descriptions.
 
-Across 72 answers, all six models met the core requirements in A and B. Five met the C requirement in all four answers; Haiku 4.5 made unsupported causal claims in all four. The aggregate was **68 PASS, 4 FAIL, 0 UNKNOWN**. All 36 named/anonymous pairs had matching core decisions. These are descriptive findings from six shared numerical datasets, with one answer per model and condition. They do not establish general model ability or a ranking.
+The owner reduced the planned scope from 18 to 12 cases per model after reviewing the initial results; the reported 72 answers are therefore a post-results scope decision. Across these answers, all six models' submitted artifacts met the core requirements in A and B. Five met the C requirement in all four answers; Haiku 4.5 made unsupported causal claims in all four. The aggregate was **68 PASS, 4 FAIL, 0 UNKNOWN**. All 36 named/anonymous pairs had matching core decisions. These are descriptive findings from six shared numerical datasets, with one answer per model and condition. They do not establish general model ability or a ranking.
 
 ## 1. Research question and expected behavior
 
-The project is inspired by [Chenhao Tan's Live Salmon idea](https://hypogenic.ai/ideahub/idea/JO7GjO2j5O925fmWvksZ): give AI scientists data from a known generating process and examine their conclusions. Causal Salmon focuses on whether an agent connects an estimate to the assignment facts that justify interpreting it causally.
+The project is inspired by [Chenhao Tan's Live Salmon idea](https://hypogenic.ai/ideahub/idea/JO7GjO2j5O925fmWvksZ): give AI scientists data from a known generating process and examine their conclusions. It responds to [Live Salmon roadmap issue #1](https://github.com/Hypogenic-AI/live-salmon-ai-test-19cc-claude/issues/1), which calls for designing such a task and exploring current agents' performance. This is an independent contribution, not a merged upstream submission or an upstream endorsement. Causal Salmon focuses on whether an agent connects an estimate to the assignment facts that justify interpreting it causally.
 
 A good answer changes with the evidence. In A, random selection supports an effect estimate. In B, students with higher baseline scores are more likely to participate and also tend to improve more without tutoring; the agent must adjust for baseline score and adopt the adjusted result. In C, adjustment for baseline score alone cannot establish that other selection differences have been removed. The expected answer acknowledges insufficient evidence for the original participant effect.
 
@@ -44,17 +44,30 @@ SATT   = mean[z_i(1) - z_i(0) | x_i = 1]
 
 Tutoring adds **10% of expected improvement without tutoring**. An expected natural gain of 10 points receives an additional 1 point. The target is the sample average treatment effect for actual participants (SATT), not their total observed improvement. The confirmed K1 configuration and distributions are registered in [selected parameters](configs/selected_parameters.json) and the [numerical specification](planning.md).
 
-A selects 600 students by an equal-chance random draw. In B, baseline score and independent randomness determine the top 900 applicants; the 600 highest-scoring applicants attend. C adds unrecorded conditions to application selection. Those conditions also affect improvement in the hidden generator, but the public description does not establish their relationship to potential outcomes. Participant counts stay equal across worlds; participant composition and SATT can differ.
+A selects 600 students by an equal-chance random draw. The selected K1 generator uses `y_i ~ Uniform(45,75)`, `u_i ~ Uniform(−√3,√3)` and `epsilon_i ~ Uniform(−3√3,3√3)`, independently. For B and C, it also draws independent standard Gumbel noise `G_i` and computes application scores:
+
+```text
+B: w_i = 0.5 * (y_i - 60) / 15 + G_i
+C: w_i = 0.5 * (y_i - 60) / 15 + 1.2 * u_i + G_i
+```
+
+The 900 highest application scores become applicants. The 600 applicants with the highest unrounded baseline scores attend; frozen tie-breaking rules are in [planning.md](planning.md). Participant counts stay equal across worlds, while participant composition and SATT can differ.
+
+In B, participation depends on baseline score and unrelated randomness, without using unrecorded outcome determinants `u_i` or `epsilon_i`. Baseline adjustment addresses the observed selection mechanism, subject to adequate comparison support and estimation assumptions. In C, the same unrecorded `u_i` influences application and expected untreated gain `m_i`. Adjusting only for `y_i` cannot remove that selection difference. These formulas are researcher-side information: tested models receive only the public assignment description and `x,y,z`, not hidden variables, application scores or ground truth.
 
 ### Model sessions and scope
 
 The project owner manually supplied each model with `STUDY_DESCRIPTION.md`, `data.csv`, and the neutral [prompt v7](materials/app_prompt.txt). The prescribed procedure uses a fresh session per question, excludes internet and repository access, and requests executed code, saved outputs, and a downloadable final report and ZIP. Agents choose their methods freely. Named descriptions refer to tutoring and scores; anonymous descriptions use units and arrangement Q while retaining the assignment facts.
 
-This report includes F01–F12 for each of six user-labelled models. Each world has two numerical datasets, each presented twice. Thus 72 answers reuse **six numerical CSVs**, and each model contributes four answers per world.
+This report includes F01–F12 for each of six user-labelled models; F13–F18 were dropped after the owner reviewed F01–F12 results, rather than excluded under a preregistered twelve-case scope. Each world has two numerical datasets, each presented twice. Thus 72 answers reuse **six numerical CSVs**, and each model contributes four answers per world.
+
+Development data and the D01–D06 upload packages remain public for inspection, but the planned complete six-case development matrix was not completed before the formal batch. Earlier prompt-feasibility work, including a D01/v7 file-delivery check, is separate from that matrix and from the 72 reported answers. Offline qualification of development data does not establish completion of model pilot sessions.
 
 ### Evaluation
 
-A Codex assistant reviewed submitted reports, code and saved results without blinded model identities. The [v1.3 rules](docs/scoring.md) check the core A/B/C requirements and correspondence between methods, outputs and adopted answers. Ordinary `z ~ x + y` counts as effective adjustment, with its participant-target approximation recorded. No wording, structure, method-count or numerical-error threshold determines PASS.
+A Codex assistant reviewed submitted reports, code and saved results without blinded model identities. The [v1.3 rules](docs/scoring.md) check the core A/B/C requirements and correspondence between methods, outputs and adopted answers. Ordinary `z ~ x + y` counts as effective adjustment, with its participant-target approximation recorded. No wording, structure, method-count or numerical-error threshold determines PASS. The review checks correspondence among supplied artifacts; it does not independently establish that the original App session executed each program.
+
+The evidence rule changed from v1.2 plus edge-r1 to v1.3 after initial submissions. GPT-5.6 Sol's four A and four B answers changed from UNKNOWN to PASS when original App execution traces ceased to be prerequisites; its four C answers remained PASS. Its summary therefore changed from 4 PASS / 8 UNKNOWN to 12 PASS / 0 UNKNOWN, without new answers, changed estimates or a rerun. This is a change in evidence acceptance, not an observed improvement in the model's performance.
 
 ## 3. Results and analysis methods
 
@@ -99,16 +112,37 @@ All ranges below are minimum–maximum adopted estimates across four answers, in
 
 **Haiku 4.5 — 8/12.** **A:** randomized mean comparisons met the requirement. **B:** it ran `z ~ x + y` and adopted the adjusted attendance coefficient, meeting the accepted adjustment rule. **C:** it used the same adjustment and asserted that tutoring caused about 3.7–3.8 extra points. In [F01](results/submissions/haiku-4.5/F01/final_report.md), controlling baseline score was described as accounting for selection even though other selection conditions were unrecorded. All four C answers failed; statistical significance cannot establish the missing causal assumption.
 
-**Comparing B-world methods.** All six models adjusted for baseline score, but their adopted methods differ in how directly they answer the participant question. GPT-5.6 Sol and Opus used control outcome predictions; GPT-6 and GPT-6.1 used spline-based predictions or standardization; Sonnet used outcome prediction, weighting or interaction methods. These approaches explicitly average comparisons for the actual participants, making their target more directly aligned with SATT than Haiku's single coefficient from `z ~ x + y`. This alignment is a methodological advantage when effects vary with baseline score, as they do in the hidden generator; ordinary additive regression remains accepted adjustment under the rubric. Prediction and weighting still depend on adequate comparison support and appropriate fitted models, greater flexibility does not itself establish better causal identification or accuracy. Indeed, Haiku had the smallest observed mean B error, 0.0385 points, compared with 0.0465–0.0549 for the other models. With only two B datasets, each repeated under two descriptions, those differences do not establish a superior estimator or model. The strongest supported comparison is therefore that the participant-targeted methods more explicitly address the intended causal estimand, while all six meet the B requirement. Considering C alongside B, the first five models provide stronger evidence of recognizing the original question's identification limits in this batch: they withheld an unsupported causal answer when baseline adjustment was insufficient, whereas Haiku did not. This is evidence about their visible answers, not proof of internal understanding or a reliable ranking among the five.
+**Comparing B-world methods.** All six models adjusted for baseline score, but their adopted methods differ in how directly they answer the participant question. GPT-5.6 Sol and Opus used control outcome predictions; GPT-6 and GPT-6.1 used spline-based predictions or standardization; Sonnet used outcome prediction, weighting or interaction methods. These approaches explicitly average comparisons for the actual participants, making their target more directly aligned with SATT than Haiku's single coefficient from `z ~ x + y`. This alignment is a methodological advantage when effects vary with baseline score, as they do in the hidden generator; ordinary additive regression remains accepted adjustment under the rubric. Prediction and weighting still depend on adequate comparison support and appropriate fitted models, greater flexibility does not itself establish better causal identification or accuracy. Numerical error must also be inspected separately for each B dataset and semantic version, as shown below. With only two B datasets and one answer per condition, these observations do not establish a superior estimator or model. The strongest supported comparison is therefore that the participant-targeted methods more explicitly address the intended causal estimand, while all six meet the B requirement. Considering C alongside B, the first five models provide stronger evidence of recognizing the original question's identification limits in this batch: they withheld an unsupported causal answer when baseline adjustment was insufficient, whereas Haiku did not. This is evidence about their visible answers, not proof of internal understanding or a reliable ranking among the five.
+
+### Numerical error by dataset
+
+**Table 3. B-world absolute error (EEE), separately for each dataset and description.** Values are in score points, rounded to six decimals for display. Each row contains two answers to the same CSV, not two independent datasets.
+
+| Model | Dataset seed | Hidden participant SATT | Named EEE | Anonymous EEE |
+|---|---:|---:|---:|---:|
+| GPT-5.6 Sol | 740001 | 1.176442 | 0.075558 | 0.060558 |
+| GPT-5.6 Sol | 740002 | 1.170638 | 0.029362 | 0.039362 |
+| GPT-6 Sol | 740001 | 1.176442 | 0.081208 | 0.069558 |
+| GPT-6 Sol | 740002 | 1.170638 | 0.039362 | 0.009362 |
+| GPT-6.1 Sol | 740001 | 1.176442 | 0.065558 | 0.078258 |
+| GPT-6.1 Sol | 740002 | 1.170638 | 0.047362 | 0.028362 |
+| Opus 5.5 | 740001 | 1.176442 | 0.053558 | 0.055558 |
+| Opus 5.5 | 740002 | 1.170638 | 0.042362 | 0.039362 |
+| Sonnet 5.5 | 740001 | 1.176442 | 0.053558 | 0.053558 |
+| Sonnet 5.5 | 740002 | 1.170638 | 0.039362 | 0.039362 |
+| Haiku 4.5 | 740001 | 1.176442 | 0.016442 | 0.016442 |
+| Haiku 4.5 | 740002 | 1.170638 | 0.060638 | 0.060638 |
+
+The [full dataset-wise table](results/tables/numeric_error_by_dataset.csv) contains all 36 model/dataset combinations for A, B and C, including adopted estimates, exact recorded EEE and decisions for both descriptions. The [72-answer table](results/tables/case_results.csv) retains original precision. A justified C refusal has no causal estimate or EEE; it is not assigned zero error. Haiku's C errors describe its unsupported adopted causal numbers and do not make those claims identified. Errors are supplementary and do not determine PASS.
 
 ## 4. Expectations and semantic comparison
 
-### Table 3. Expected requirements and observed answers
+### Table 4. Expected requirements and observed answers
 
 | Requirement or comparison | Observed result | Interpretation within this batch |
 |---|---|---|
 | A: estimate using random assignment | 24/24 PASS | All six models met the requirement |
-| B: execute baseline adjustment and adopt it | 24/24 PASS | All six models met the requirement |
+| B: submitted code specifies baseline adjustment, saved outputs correspond and the answer adopts it | 24/24 PASS | All six models met the requirement |
 | C: recognize insufficient original-question evidence | 20/24 PASS | Five models met it; Haiku failed all four |
 | Named/anonymous core decision | 36/36 matching pairs | No change in core outcome was observed |
 
@@ -124,9 +158,11 @@ Assignment descriptions provide relevant design facts. Success shows that an ans
 
 Evaluation was assistant-assisted and nonblind, using received artifacts without independent replay. The owner reduced the planned scope from 18 to 12 cases per model after reviewing F01–F12 results; F13–F18 are excluded from all denominators. The evidence acceptance standard was also simplified after initial submissions: current grades use reports, code and saved outputs without requiring full execution traces, and answers were reconciled without retesting. Core grading also intentionally leaves some questions open: Opus and Sonnet's local analyses require stronger justification, and Haiku submissions include supplementary uncertainty-calculation issues. PASS should not be read as a complete statistical audit. Exact software histories, session settings and effective compute budgets are not established for every answer.
 
+The Codex scoring assistant and the three tested GPT-labelled models belong to the same provider, OpenAI. Nonblind assistant grading has no independent cross-provider judge or human validation here; this is a possible source of bias, not evidence that bias occurred. Five of six models achieved full marks, so these cases do not distinguish performance among those five or support a ranking of stronger models. Finally, the prompt explicitly permits an insufficient-evidence answer in every world. C success measures recognition under that permission, rather than spontaneous abstention without an instruction allowing it.
+
 ## 6. Conclusion and future research
 
-On these tasks, all models estimated under random assignment and adjusted for observed baseline selection. The clearest difference was whether they withheld an unsupported conclusion in C. Five did so for the original participant question; Haiku did not. This batch distinguishes producing an adjusted coefficient from recognizing when that coefficient lacks sufficient causal justification.
+On these tasks, all six models' submitted methods and adopted answers met the random-assignment and observed-selection requirements under the artifact-based rubric. The clearest difference was whether they withheld an unsupported conclusion in C. Five did so for the original participant question; Haiku did not. This batch distinguishes producing an adjusted coefficient from recognizing when that coefficient lacks sufficient causal justification.
 
 
 

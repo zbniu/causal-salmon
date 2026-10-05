@@ -1,5 +1,7 @@
 # Implementation and verification responsibilities
 
+**Record scope:** the offline implementation stage, before the App experiments and repository publication. Later experiments and publication are described in [the current contribution record](contributions.md).
+
 The project owner confirmed the research design, K1 parameters and final generation policy.
 
 The main Codex agent implemented the generator, estimators, diagnostics, public reference executable, sandbox launcher, hidden qualification checks, persistence, report extraction, summaries and comparison tools in `src/` and `scripts/`.
